@@ -19,7 +19,29 @@ app.set("view engine", ".hbs");
 app.set("views", "./views");
 
 app.get("/", (req, res) => {
-  res.render("home");
+  res.render("home", {
+    layout: "main",
+    // showContentMayTinh: false,
+    helpers: {
+      foo() {
+        return "Dientcph27512-MOB402-Cp17305";
+      },
+    },
+  });
+});
+app.get("/mayTinh", (req, res) => {
+  res.render("ultilsView", {
+    layout: "main",
+    showContentMayTinh:true,
+    soA:15,
+    soB: 5,
+    kq:20,
+    helpers: {
+      foo() {
+        return "Dientcph27512-MOB402-Cp17305";
+      },
+    },
+  });
 });
 
 //app.use(express.static(__dirname));
